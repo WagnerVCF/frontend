@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista suspensa clicável</title>
+
+    <style>
+
+
+        button{
+            background-color: blue;
+            color: white;
+            padding: 6px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover{
+            background-color: #2980B9;
+        }
+
+        .dropdown{
+            position:relative;
+            display: inline-block;
+        }
+
+        .conteudo{
+            display: none;
+            position: absolute;
+            background-color: #f1f1f1;
+            min-width: 160px;
+            overflow: auto;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .conteudo a{ /*faz aparecer submenu*/
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+           
+        }
+
+        .conteudo a:hover{
+            background-color: #ddd;
+        }
+
+        .mostrar{
+            display: block;
+        }    
+
+    </style>
+
+</head>
+<body>
+    <h2> Lista suspensa clicável</h2>
+    <p> clique no botão para abrir o menu suspenso</p>
+
+    <div class="dropdown">
+        <button onclick="mostrar()" class="botao">
+            Menu suspenso
+        </button>
+        <div id="menuSuspenso" class="conteudo">
+            <a href="#home"> inicial</a>
+            <a href="#sobre"> Sobre</a>
+            <a href="#contato"> Contato</a>
+        </div>
+    </div>
+
+<script>
+    /*para mostrar e esconder o conteúdo suspenso quando o usuário clicar */
+    function mostrar(){
+        document.getElementById("menuSuspenso").classList.toggle("mostrar");
+    }
+    /*fecha a lista suspensa se o usuario clicar fora*/
+    window.onclick = function(event){
+        if(!event.target.matches('.botao')){
+            var listaSuspensa = document.getElementsByClassName("conteudo");
+            var i;
+            for (i = 0; i < listaSuspensa.length; i++){
+                var abrirMenu = listaSuspensa[i];
+                if(abrirMenu.classList.contains('mostrar')){
+                    abrirMenu.classList.remove('mostrar');
+                }
+            }
+        }
+    }
+
+</script>
+
+
+</body>
+</html>

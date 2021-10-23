@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center><h1>Alterar conteudo do html</h1></center>
+    <p id="conteudo">vou alterar</p>
+    <button onclick="mudar()">mudar</button>
+    <hr>
+
+    <center><h2>Alterar os valores dos atributos do HTML</h2></center>
+    <button onclick="acender_luz()">ligar</button>
+    <img id="lampada" src="images/luz_apagada.gif" onmouseover="acender_luz()"
+    onmouseout="apagar_luz()">
+    <button onclick="apagar_luz()">desligar</button>
+
+    <hr>
+    <center><h2>Alterar os estilos do CSS</h2></center>
+    <p id="crescer">Se agitar cresce !!! </p>
+    <button onclick="agitacresce()">Agita pra crescer</button>
+
+</body>
+<script>
+    function mudar(){document.getElementById('conteudo').innerHTML = 'conteudo alterado'};
+    function acender_luz(){document.getElementById('lampada').src = "images/luz_acesa.gif"}
+    function apagar_luz(){document.getElementById('lampada').src = "images/luz_apagada.gif"}
+        function agitacresce(){document.getElementById('crescer').style.fontSize = '45px'
+        document.getElementById('crescer').style.color='blue'};
+</script>
+
+</html>

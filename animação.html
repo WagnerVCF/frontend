@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+    #principal{
+            position: relative;
+            width: 400px;
+            height: 400px;
+            background-color: pink;
+    }
+
+    #animar{
+            width: 50px;
+            height: 50px;
+            background-color: red;
+            border-radius: 50%;
+            position: absolute;
+    }
+    
+    #btn{
+            background-color: blue;
+            color: white;
+            position: absolute;
+    }
+    </style>    
+
+</head>
+    <h2></h2>Minha primeira animação no javascript</h2>
+    <div id="principal">
+        <div id="animar">
+
+            
+     </div>
+    </div>
+
+    <button id="btn"  onclick="mover()"> Iniciar</button>
+    <button id="btn" onmouseover="mover()"> Iniciar</button>
+<body>
+        <script>
+            function mover(){
+            var elemento = document.getElementById("animar");
+            var posicao = 0;
+            var id = setInterval(quadroAquadro, 3);
+
+            function quadroAquadro(){
+                if (posicao == 350){
+                    clearInterval(id);
+                                        posicao++;
+                    elemento.style.top = posicao + "px";
+                    elemento.style.left = posicao + "px";
+                }else{
+                    posicao++;
+                    elemento.style.top = posicao + "px";
+                    elemento.style.left = posicao + "px";
+                }
+            }
+        }
+            
+
+        </script>
+</body>
+</html>
